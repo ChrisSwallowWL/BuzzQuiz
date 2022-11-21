@@ -45,7 +45,7 @@ for question in questions:
             button = buzz.get_button_pressed(controller)
             if button and button != "red":
                 if button == question["correct"]:
-                    print("Controller " + str(controller) + " was correct")
+                    print("Controller " + str(controller+1) + " was correct")
                     question_answered = True
                     score[controller] += 1
                     break
