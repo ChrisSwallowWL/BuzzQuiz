@@ -1,0 +1,30 @@
+[
+  {
+    "question": "What is the capital of Australia",
+    "answers": [
+      "Canberra",
+      "Sydney",
+      "Hobart",
+      "Melbourne"
+    ]
+  },
+  {
+    "question": "What is the capital of Japan",
+    "answers": [
+      "Tokyo",
+      "Horoshima",
+      "Osaka",
+      "Kyoto"
+    ]
+  }
+,
+  {
+    "question": "What is the capital of France",
+    "answers": [
+      "Paris",
+      "Lyon",
+      "Marseille",
+      "Calais"
+    ]
+  }
+]
