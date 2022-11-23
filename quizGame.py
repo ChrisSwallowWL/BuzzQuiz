@@ -15,26 +15,26 @@ def play_sound(sound_file, wait=0):
 
 
 def load_questions(file):
-    return json.load(file)
+
+    # Import and shuffle the questions
+    question_file = open(file)
+    for q in json.load(question_file):
+        buttons = ["blue", "orange", "green", "yellow"]
+        new_answer = {}
+        shuffle(buttons)
+        new_answer['question'] = q['question']
+        for i in range(4):
+            if i == 0:
+                new_answer["correct"] = buttons[i]
+            new_answer[buttons[i]] = q["answers"][i]
+        questions.append(new_answer)
 
 
 questions = []
 score = [0, 0, 0, 0]
 
-# Import and shuffle the questions
-question_file = open('Questions/Round1.json')
-for question in load_questions(question_file):
-    buttons = ["blue", "orange", "green", "yellow"]
-    new_answer = {}
-    shuffle(buttons)
-    new_answer['question'] = question['question']
-    for i in range(4):
-        if i == 0:
-            new_answer["correct"] = buttons[i]
-        new_answer[buttons[i]] = question["answers"][i]
-    questions.append(new_answer)
+load_questions('Questions/Round1.json')
 
-# Create a new instance of the controller
 buzz = BuzzController()
 
 for question in questions:
