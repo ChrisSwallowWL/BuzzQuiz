@@ -1,6 +1,6 @@
 [
   {
-    "question": "What is the capital of Australia",
+    "question": "What is the capital of Australia?",
     "answers": [
       "Canberra",
       "Sydney",
@@ -9,7 +9,7 @@
     ]
   },
   {
-    "question": "What is the capital of Japan",
+    "question": "What is the capital of Japan?",
     "answers": [
       "Tokyo",
       "Horoshima",
@@ -19,7 +19,7 @@
   }
 ,
   {
-    "question": "What is the capital of France",
+    "question": "What is the capital of France?",
     "answers": [
       "Paris",
       "Lyon",
