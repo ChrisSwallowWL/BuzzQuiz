@@ -3,6 +3,8 @@ import time
 
 
 class BuzzController:
+    lights_on = [0x00, 0x00, 0xFF, 0xFF, 0xFF, 0xFF, 0x00, 0x00]
+    lights_off = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
     light_array = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
     light_blinking = False
     button_state = [
@@ -27,7 +29,6 @@ class BuzzController:
         self.hid.write(self.light_array)
 
     def light_blink(self, controller):
-        blink_lights_off = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
         self.blink_lights_on = [0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00]
 
         for i in controller:
@@ -40,7 +41,7 @@ class BuzzController:
                 if blink:
                     self.hid.write(self.blink_lights_on)
                 else:
-                    self.hid.write(blink_lights_off)
+                    self.hid.write(self.lights_off)
                 blink = not blink
                 time.sleep(0.5)
 
@@ -91,6 +92,12 @@ class BuzzController:
 
     def light_blink_stop(self):
         self.light_blinking = False
+
+    def all_on(self):
+        self.hid.write(self.lights_on)
+
+    def all_off(self):
+        self.hid.write(self.lights_off)
 
     def light_set(self, controller, status):
         self.light_array[controller + 2] = 0xFF if status else 0x00
