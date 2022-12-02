@@ -1,0 +1,14 @@
+{
+  "type": "text",
+  "questions": [
+    {
+      "question": "What is the capital of Australia?",
+      "answers": [
+        "Canberra",
+        "Sydney",
+        "Hobart",
+        "Melbourne"
+      ]
+    }
+  ]
+}
