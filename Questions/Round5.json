@@ -1,0 +1,25 @@
+{
+  "type": "music",
+  "questions": [
+    {
+      "question": "Which year did the lead singer of this band die?",
+      "track": "Sounds/Nirvana.wav",
+      "answers": [
+        "1994",
+        "1996",
+        "2002",
+        "2004"
+      ]
+    },
+    {
+      "question": "What does Mariah want for Christmas?",
+      "track": "Sounds/Mariah.wav",
+      "answers": [
+        "You",
+        "A new car",
+        "Money",
+        "A slap"
+      ]
+    }
+  ]
+}
