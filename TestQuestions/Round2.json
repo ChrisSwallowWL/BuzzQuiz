@@ -1,0 +1,14 @@
+{
+  "type": "image",
+  "questions": [
+    {
+      "question": "Which of these is Ed Sheeran?",
+      "answers": [
+        "Pictures/edsheeran.jpg",
+        "Pictures/ronweasley.jpg",
+        "Pictures/prince-harry.jpg",
+        "Pictures/chrisevans.jpg"
+      ]
+    }
+  ]
+}
