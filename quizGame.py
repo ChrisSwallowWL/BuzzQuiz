@@ -3,18 +3,31 @@ from __future__ import print_function
 import time
 import _thread
 import json
+import tkinter
 from os import path
-from tkinter import Tk, StringVar, Label, Button, Frame, DISABLED, NORMAL
+from tkinter import Tk, Label, Button, Frame, NORMAL
 from PIL import ImageTk, Image
 
 from BuzzController import BuzzController
 from random import shuffle
 from playsound import playsound
+from pygame import mixer
+
+import multiprocessing
 
 team1colour = "red"
 team2colour = "green"
 team3colour = "blue"
 team4colour = "orange"
+
+mixer.init()
+
+
+def play_music(sound_file, wait=0):
+    mixer.music.load(path.abspath(sound_file))
+    mixer.music.play()
+    time.sleep(wait)
+    # mixer.music.stop()
 
 
 def play_sound(sound_file, wait=0):
@@ -23,11 +36,12 @@ def play_sound(sound_file, wait=0):
 
 
 def load_questions(file):
-    global question_type, questions
+    global question_type, questions, round_name
 
     # Import and shuffle the questions
     question_file = open(file)
     questions_json = json.load(question_file)
+    round_name = questions_json['name']
     question_type = questions_json['type']
     for q in questions_json['questions']:
         buttons = ["blue", "orange", "green", "yellow"]
@@ -66,10 +80,22 @@ def reset():
     startButton['state'] = NORMAL
 
     questionLabel.configure(text="Press Start to Begin")
+    clear_images()
+    clear_labels()
+
+
+def clear_images():
     set_image(blue_answer, "Pictures/Blue.jpg")
     set_image(orange_answer, "Pictures/Orange.jpg")
     set_image(green_answer, "Pictures/Green.jpg")
     set_image(yellow_answer, "Pictures/Yellow.jpg")
+
+
+def clear_labels():
+    set_label(blue_answer, "", "Blue")
+    set_label(orange_answer, "", "Orange")
+    set_label(green_answer, "", "Green")
+    set_label(yellow_answer, "", "Yellow")
 
 
 def set_label(label, text, colour):
@@ -93,6 +119,14 @@ def set_image(label, file):
 def start():
     global startButton, questionLabel, current_round, current_question
 
+    # Immediately disable the start button so that you can't press it twice
+    startButton['state'] = tkinter.DISABLED
+
+    clear_images()
+    clear_labels()
+    questionLabel.configure(text="")
+    root.update()
+
     # If this is the first question clear and load the questions for this round
     if current_question == 0 and current_round <= rounds:
         questions.clear()
@@ -106,7 +140,9 @@ def start():
 
     if question_type == "music":
         questionLabel.configure(text="Listen....")
-        play_sound(tracks[current_question], 30)
+        root.update()
+        time.sleep(2)
+        play_music(tracks[current_question], 10)
 
     # Output the question
     questionLabel.configure(text=questions[current_question]["question"])
@@ -116,16 +152,13 @@ def start():
     # Set the start button to the next function
     if current_question + 1 == len(questions) and current_round < rounds:
         startButton['text'] = "Next Round"
-        startButton['state'] = DISABLED
         current_question = 0
         current_round += 1
     elif current_question + 1 == len(questions) and current_round == rounds:
         startButton['text'] = "Finish"
-        startButton['state'] = DISABLED
         current_question += 1
     else:
         startButton['text'] = "Next Question"
-        startButton['state'] = DISABLED
         current_question += 1
 
 
@@ -165,49 +198,64 @@ def wait_for_buzz(question_number):
     available_answers = ["Blue", "Orange", "Green", "Yellow"]
     available_controllers = [0, 1, 2, 3]
 
+    buzz.clear_status()
+    buzz.hid.read(5)
+    buzz.get_button_pressed(0)
+
     # Display the answers for the current question
     question = questions[question_number]
     for answer in available_answers:
         set_answers(answer, question[answer.lower()])
 
-    # Call this to start so that it resets any buzzers pushed before the question is set
-    buzz.get_button_pressed(0)
-
     while not question_answered:
+
+        for x in range(0, 20):
+            buzz.clear_status()
+            buzz.hid.read(5)
 
         # Start the lights blinking and wait for a button press
         _thread.start_new_thread(buzz.light_blink, (available_controllers,))
         controller = buzz.controller_get_first_pressed("red", available_controllers)
         buzz.light_blink_stop()
         buzz.light_set(controller, True)
+        mixer.music.stop()
         play_sound('Sounds/buzzer.wav', 1)
         time.sleep(0.5)
 
         countdown = int(timeLabel['text'])
         while True:
+
             button = buzz.get_button_pressed(controller)
             buzz.light_blink_stop()
 
             if button and button != "red":
                 if button == question["correct"]:
                     play_sound('Sounds/bell.wav', 1)
-                    print("Controller " + str(controller + 1) + " was correct")
+                    print("Team " + str(controller + 1) + " were correct")
                     question_answered = True
                     update_score(controller, 1)
-                    startButton['state'] = NORMAL
+                    startButton['state'] = tkinter.NORMAL
                     break
                 elif button.capitalize() in available_answers:
                     play_sound('Sounds/wrong.wav', 1)
                     print("Sorry incorrect answer")
                     available_controllers.remove(controller)
                     # available_answers.remove(button.capitalize())
+
+                    # If there are no more controllers, re-enable the button to continue
+                    if len(available_controllers) == 0:
+                        startButton['text'] = "Skip"
+                        startButton['state'] = tkinter.NORMAL
+                        question_answered = True
                     break
+
             time.sleep(0.2)
             countdown -= 0.2
             if countdown < 0:
                 play_sound('Sounds/wrong.wav', 1)
                 available_controllers.remove(controller)
                 break
+
         buzz.light_set(controller, False)
     time.sleep(1)
 
@@ -215,6 +263,7 @@ def wait_for_buzz(question_number):
 # Main Program
 questions = []
 question_type = ""
+round_name = ""
 tracks = []
 current_round = 1
 current_question = 0
@@ -243,23 +292,23 @@ score3Frame.grid(row=1, column=2)
 score4Frame = Frame(scoreFrame, borderwidth=2, relief="raised")
 score4Frame.grid(row=1, column=3)
 
-team1_label = Label(score1Frame, text="Team 1", justify="right", font=medium_font)
+team1_label = Label(score1Frame, text="Tripdick", justify="right", font=medium_font)
 team1_score = Label(score1Frame, text=0, justify="right", width=20, font=medium_font, fg=team1colour)
 team1_label.grid(row=0, column=0)
 team1_score.grid(row=1, column=0)
 
-team2_label = Label(score2Frame, text="Team 2", justify="right", font=medium_font)
+team2_label = Label(score2Frame, text="Urgently Needed", justify="right", font=medium_font)
 team2_score = Label(score2Frame, justify="right", width=20, font=medium_font, fg=team2colour)
 team2_label.grid(row=0, column=0)
 team2_score.grid(row=1, column=0)
 
-team3_label = Label(score3Frame, text="Team 3", justify="right", font=medium_font)
+team3_label = Label(score3Frame, text="3 Musketeers", justify="right", font=medium_font)
 team3_score = Label(score3Frame, justify="right", width=20, font=medium_font, fg=team3colour)
 team3_score.config()
 team3_label.grid(row=0, column=0)
 team3_score.grid(row=1, column=0)
 
-team4_label = Label(score4Frame, text="Team 4", justify="right", font=medium_font)
+team4_label = Label(score4Frame, text="Jeff Bezos", justify="right", font=medium_font)
 team4_score = Label(score4Frame, justify="right", width=20, font=medium_font, fg=team4colour)
 team4_label.grid(row=0, column=0)
 team4_score.grid(row=1, column=0)
@@ -334,7 +383,7 @@ resetButton.grid(row=8, column=0)
 startButton = Button(root, text="Start", justify="center", width=20, height=2, command=start, font=medium_font)
 startButton.grid(row=8, column=3)
 
-rounds = 5
+rounds = 2
 
 # Initialise the buzzer and turn the lights off
 buzz = BuzzController()
