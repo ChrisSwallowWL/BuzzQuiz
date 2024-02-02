@@ -1,25 +1,95 @@
 {
-  "name": "Music Round",
-  "type": "music",
+  "name": "Scouting",
+  "type": "text",
   "questions": [
     {
-      "question": "Which year did the lead singer of this band die?",
-      "track": "Sounds/Nirvana.wav",
+      "question": "1) The Cub Scout Law says that Cub Scouts should do what every day?",
       "answers": [
-        "1994",
-        "1996",
-        "2002",
-        "2004"
+        "A good turn",
+        "A handstand",
+        "A loud trump",
+        "Brush their teeth"
       ]
     },
     {
-      "question": "What does Mariah want for Christmas?",
-      "track": "Sounds/Mariah.wav",
+      "question": "2) The flag of which United Kingdom country is NOT used in the Union Jack?",
       "answers": [
-        "You",
-        "A new car",
-        "Money",
-        "A slap"
+        "Ireland",
+        "England",
+        "Scotland",
+        "Wales"
+      ]
+    },
+    {
+      "question": "3) What is the highest badge you can get in the Cub Scout Programme?",
+      "answers": [
+        "Chief Scout's Silver Award",
+        "Adventure Crest Award",
+        "Membership Award",
+        "Joining in Award"
+      ]
+    },
+    {
+      "question": "4) How old must you be to be a Cub Scout",
+      "answers": [
+        "8",
+        "7",
+        "12",
+        "104"
+      ]
+    },
+    {
+      "question": "5) How old should you be in order to move up to Scouts?",
+      "answers": [
+        "10 1/2",
+        "11",
+        "43",
+        "3"
+      ]
+    },
+    {
+      "question": "6) Which of these Cub Scout Activity Badges does NOT exist?",
+      "answers": [
+        "Astrologer",
+        "Astronomer",
+        "Equestrian",
+        "Scientist"
+      ]
+    },
+    {
+      "question": "7) How many Collectors badges can a Cub Scout Earn?",
+      "answers": [
+        "As many as they like!",
+        "2",
+        "4",
+        "1,650,002"
+      ]
+    },
+    {
+      "question": "8) What is the Scout motto?",
+      "answers": [
+        "Be Prepared",
+        "Don't worry, Be Happy",
+        "Be loyal",
+        "Be Awesome always"
+      ]
+    },
+    {
+      "question": "9) Who is the leader of the Cub Pack?",
+      "answers": [
+        "Akela",
+        "Baloo",
+        "Raksha",
+        "Darth Vader"
+      ]
+    },
+    {
+      "question": "10) What book is Cubs Scout Leader names based upon?",
+      "answers": [
+        "The Jungle Book",
+        "Harry Potter and the Philosophers Stone",
+        "The Hungry Caterpillar",
+        "Where's Wally?"
       ]
     }
   ]
