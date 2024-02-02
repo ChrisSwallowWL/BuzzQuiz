@@ -1,8 +1,9 @@
 {
+  "name": "Scouting",
   "type": "text",
   "questions": [
     {
-      "question": "Which of the following is NOT a Scout law?",
+      "question": "1) Which of the following is NOT a Scout law?",
       "answers": [
         "A Scout does a good deed every day",
         "A Scout is loyal",
@@ -11,7 +12,7 @@
       ]
     },
     {
-      "question": "Which of these is a Scout challenge badge?",
+      "question": "2) Which of these is a Scout challenge badge?",
       "answers": [
         "Teamwork badge",
         "Stick badge",
@@ -20,7 +21,7 @@
       ]
     },
     {
-      "question": "Where was the first Scout camp held?",
+      "question": "3) Where was the first Scout camp held?",
       "answers": [
         "Brown-sea Island",
         "Hayling Island",
@@ -29,7 +30,7 @@
       ]
     },
     {
-      "question": "Scouting began in which year?",
+      "question": "4) Scouting began in which year?",
       "answers": [
         "1907",
         "1902",
@@ -38,7 +39,7 @@
       ]
     },
     {
-      "question": "Which came first?",
+      "question": "5) Which came first?",
       "answers": [
         "The start of Beavers",
         "Venture Scouts being replaced by Explorer Scouts",
@@ -47,7 +48,7 @@
       ]
     },
     {
-      "question": "Scouts shake hands with the left hand, why?",
+      "question": "6) Scouts shake hands with the left hand, why?",
       "answers": [
         "Baden Powell was impressed by the Ashanti people who offered their left hands when they greeted him, as it meant lowering their shield  and thus their protection",
         "Baden Powell was left handed",
@@ -56,7 +57,7 @@
       ]
     },
     {
-      "question": "Which of these is not a knot?",
+      "question": "7) Which of these is not a knot?",
       "answers": [
         "Reef knot",
         "Figure of 8 knot",
@@ -65,7 +66,7 @@
       ]
     },
     {
-      "question": "Which of these is not a lashing?",
+      "question": "8) Which of these is not a lashing?",
       "answers": [
         "a damn good lashing",
         "a square lashing",
@@ -74,7 +75,7 @@
       ]
     },
     {
-      "question": "On an OS 1:25,000 map, 1 cm on the map represents what distance on the ground?",
+      "question": "9) On an OS 1:25,000 map, 1 cm on the map represents what distance on the ground?",
       "answers": [
         "250m",
         "2.5m",
@@ -83,7 +84,7 @@
       ]
     },
     {
-      "question": "On an OS map what does a letter ‘P’ indicate?",
+      "question": "10) On an OS map what does a letter ‘P’ indicate?",
       "answers": [
         "Parking",
         "Post Office",
