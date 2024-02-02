@@ -1,86 +1,95 @@
 {
-  "name": "Scouting",
-  "type": "image",
+  "name": "Capital Cities",
+  "type": "text",
   "questions": [
     {
-      "question": "1) Which of these is a reef knot?",
+      "question": "1) What is the Capital City of England?",
       "answers": [
-        "Pictures/Knot2.jpg",
-        "Pictures/Knot1.jpg",
-        "Pictures/Knot3.jpg",
-        "Pictures/Knot4.jpg"
+        "London",
+        "Edinburgh",
+        "Cardiff",
+        "Belfast"
       ]
     },
     {
-      "question": "2) Which of these is the 1:25,000 OS map symbol for a public foot path?",
+      "question": "2) What is the Capital City of The Republic of Ireland?",
       "answers": [
-        "Pictures/OS4.jpg",
-        "Pictures/OS1.jpg",
-        "Pictures/OS2.jpg",
-        "Pictures/OS3.jpg"
+        "Dublin",
+        "Cork",
+        "Limerick",
+        "Sligo"
       ]
     },
     {
-      "question": "3) Which of these leaves comes from an Ash tree?",
+      "question": "3) What is the Capital City of France?",
       "answers": [
-        "Pictures/Ash.jpg",
-        "Pictures/Oak.jpg",
-        "Pictures/Sycamore.jpg",
-        "Pictures/Hornbeam.jpg"
+        "Paris",
+        "Reims",
+        "Lyon",
+        "Nice"
       ]
     },
     {
-      "question": "4) Which of these is the Chief Scout?",
+      "question": "4) What is the Capital City of Germany?",
       "answers": [
-        "Pictures/BearGrylls.jpg",
-        "Pictures/KingCharles.jpg",
-        "Pictures/BadenPowell.jpg",
-        "Pictures/PrinceHarry.jpg"
+        "Berlin",
+        "Hamburg",
+        "Munich",
+        "Dortmund"
       ]
     },
     {
-      "question": "5) Which of these is the right thing to do with someone who has fainted?",
+      "question": "5) What is the Capital City of Spain?",
       "answers": [
-        "Pictures/Fainting.jpg",
-        "Pictures/CPR.jpg",
-        "Pictures/RecoveryPosition.jpg",
-        "Pictures/Heimlich.jpg"
+        "Madrid",
+        "Malaga",
+        "Bilbao",
+        "Seville"
       ]
     },
     {
-      "question": "6) Which of these is NOT a flag of a country within the British Isles?",
+      "question": "6) What is the Capital City of Portugal?",
       "answers": [
-        "Pictures/Flag3.jpg",
-        "Pictures/Flag1.jpg",
-        "Pictures/Flag2.jpg",
-        "Pictures/Flag4.jpg"
+        "Lisbon",
+        "Porto",
+        "Braga",
+        "Coimbra"
       ]
     },
     {
-      "question": "7) Which of these nasties is NOT native to the UK",
+      "question": "7) What is the Capital City of Norway?",
       "answers": [
-        "Pictures/Spider.jpg",
-        "Pictures/Leech.jpg",
-        "Pictures/Mosquito.jpg",
-        "Pictures/Tick.jpg"
+        "Oslo",
+        "Bergen",
+        "Stavanager",
+        "Viking Town"
       ]
     },
     {
-      "question": "8) Which of these is the North York Moors National Park?",
+      "question": "8) What is the Capital City of Finland?",
       "answers": [
-        "Pictures/NorthYorkMoors.jpg",
-        "Pictures/PeakDistrict.jpg",
-        "Pictures/YorkshireDales.jpg",
-        "Pictures/LakeDistrict.jpg"
+        "Helsinki",
+        "Turku",
+        "Santa's House",
+        "Very Cold Place"
       ]
     },
     {
-      "question": "9) According to a recent YouGov survey, which of these is the most popular UK meal?",
+      "question": "9) What is the Capital City of The United States of America?",
       "answers": [
-        "Pictures/SundayRoast.jpg",
-        "Pictures/FishandChips.jpg",
-        "Pictures/FullEnglish.jpg",
-        "Pictures/ChickenCurry.jpg"
+        "Washington D.C",
+        "Detroit",
+        "Los Angeles",
+        "Las Vegas"
+      ]
+    },
+    {
+      "question": "10) What is the Capital City of Brasil?",
+      "answers": [
+        "Brasilia",
+        "Rio de Janeiro",
+        "Sao Paulo",
+        "Curitiba"
       ]
     }
   ]
