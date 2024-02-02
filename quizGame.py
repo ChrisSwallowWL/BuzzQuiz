@@ -75,7 +75,7 @@ def reset():
 
     # Reset the counters
     current_round = 1
-    current_question = 0
+    current_question = -1
     startButton['text'] = "Start"
     startButton['state'] = NORMAL
 
@@ -128,10 +128,16 @@ def start():
     root.update()
 
     # If this is the first question clear and load the questions for this round
-    if current_question == 0 and current_round <= rounds:
+    if current_question == -1 and current_round <= rounds:
         questions.clear()
         question_file = 'Questions/Round' + str(current_round) + '.json'
         load_questions(question_file)
+        questionLabel.configure(text=round_name + " Round")
+        root.update()
+        current_question = 0
+        startButton['text'] = 'Start'
+        startButton['state'] = tkinter.NORMAL
+        return
 
     # If we have stopped then don't do anything for now
     if startButton['text'] == "Finish":
@@ -142,7 +148,7 @@ def start():
         questionLabel.configure(text="Listen....")
         root.update()
         time.sleep(2)
-        play_music(tracks[current_question], 10)
+        play_music(tracks[current_question], 5)
 
     # Output the question
     questionLabel.configure(text=questions[current_question]["question"])
@@ -152,7 +158,7 @@ def start():
     # Set the start button to the next function
     if current_question + 1 == len(questions) and current_round < rounds:
         startButton['text'] = "Next Round"
-        current_question = 0
+        current_question = -1
         current_round += 1
     elif current_question + 1 == len(questions) and current_round == rounds:
         startButton['text'] = "Finish"
@@ -266,7 +272,7 @@ question_type = ""
 round_name = ""
 tracks = []
 current_round = 1
-current_question = 0
+current_question = -1
 score = [0, 0, 0, 0]
 
 root = Tk()
@@ -383,7 +389,7 @@ resetButton.grid(row=8, column=0)
 startButton = Button(root, text="Start", justify="center", width=20, height=2, command=start, font=medium_font)
 startButton.grid(row=8, column=3)
 
-rounds = 2
+rounds = 5
 
 # Initialise the buzzer and turn the lights off
 buzz = BuzzController()
