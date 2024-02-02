@@ -1,94 +1,86 @@
 {
-  "type": "text",
+  "name": "Scouting",
+  "type": "image",
   "questions": [
     {
-      "question": "Which of the following is NOT a Scout law?",
+      "question": "1) Which of these is a reef knot?",
       "answers": [
-        "A Scout does a good deed every day",
-        "A Scout is loyal",
-        "A Scout is to be Trusted",
-        "A Scout belongs to the world-wide family of Scouts"
+        "Pictures/Knot2.jpg",
+        "Pictures/Knot1.jpg",
+        "Pictures/Knot3.jpg",
+        "Pictures/Knot4.jpg"
       ]
     },
     {
-      "question": "Which of these is a Scout challenge badge?",
+      "question": "2) Which of these is the 1:25,000 OS map symbol for a public foot path?",
       "answers": [
-        "Teamwork badge",
-        "Stick badge",
-        "Pulling badge",
-        "Librarian badge"
+        "Pictures/OS4.jpg",
+        "Pictures/OS1.jpg",
+        "Pictures/OS2.jpg",
+        "Pictures/OS3.jpg"
       ]
     },
     {
-      "question": "Where was the first Scout camp held?",
+      "question": "3) Which of these leaves comes from an Ash tree?",
       "answers": [
-        "Brown-sea Island",
-        "Hayling Island",
-        "Walney Island",
-        "Isle of Wight"
+        "Pictures/Ash.jpg",
+        "Pictures/Oak.jpg",
+        "Pictures/Sycamore.jpg",
+        "Pictures/Hornbeam.jpg"
       ]
     },
     {
-      "question": "Scouting began in which year?",
+      "question": "4) Which of these is the Chief Scout?",
       "answers": [
-        "1907",
-        "1902",
-        "1919",
-        "1952"
+        "Pictures/BearGrylls.jpg",
+        "Pictures/KingCharles.jpg",
+        "Pictures/BadenPowell.jpg",
+        "Pictures/PrinceHarry.jpg"
       ]
     },
     {
-      "question": "Which came first?",
+      "question": "5) Which of these is the right thing to do with someone who has fainted?",
       "answers": [
-        "The start of Beavers",
-        "Venture Scouts being replaced by Explorer Scouts",
-        "Girls being allowed into Cubs and Scouts",
-        "The centenary of Scouting"
+        "Pictures/Fainting.jpg",
+        "Pictures/CPR.jpg",
+        "Pictures/RecoveryPosition.jpg",
+        "Pictures/Heimlich.jpg"
       ]
     },
     {
-      "question": "Scouts shake hands with the left hand, why?",
+      "question": "6) Which of these is NOT a flag of a country within the British Isles?",
       "answers": [
-        "Baden Powell was impressed by the Ashanti people who offered their left hands when they greeted him, as it meant lowering their shield  and thus their protection",
-        "Baden Powell was left handed",
-        "The right hand is considered ‘unclean’ in some cultures",
-        "Baden Powell’s right hand was badly wounded in the battle of Mafeking, so he couldn’t shake hands with it"
+        "Pictures/Flag3.jpg",
+        "Pictures/Flag1.jpg",
+        "Pictures/Flag2.jpg",
+        "Pictures/Flag4.jpg"
       ]
     },
     {
-      "question": "Which of these is not a knot?",
+      "question": "7) Which of these nasties is NOT native to the UK",
       "answers": [
-        "Reef knot",
-        "Figure of 8 knot",
-        "Blood knot",
-        "Overhand (thumb) knot"
+        "Pictures/Spider.jpg",
+        "Pictures/Leech.jpg",
+        "Pictures/Mosquito.jpg",
+        "Pictures/Tick.jpg"
       ]
     },
     {
-      "question": "Which of these is not a lashing?",
+      "question": "8) Which of these is the North York Moors National Park?",
       "answers": [
-        "a damn good lashing",
-        "a square lashing",
-        "a shear lashing",
-        "a diagonal lashing"
+        "Pictures/NorthYorkMoors.jpg",
+        "Pictures/PeakDistrict.jpg",
+        "Pictures/YorkshireDales.jpg",
+        "Pictures/LakeDistrict.jpg"
       ]
     },
     {
-      "question": "On an OS 1:25,000 map, 1 cm on the map represents what distance on the ground?",
+      "question": "9) According to a recent YouGov survey, which of these is the most popular UK meal?",
       "answers": [
-        "250m",
-        "2.5m",
-        "25m",
-        "2,500m"
-      ]
-    },
-    {
-      "question": "On an OS map what does a letter ‘P’ indicate?",
-      "answers": [
-        "Parking",
-        "Post Office",
-        "Public House",
-        "Phone"
+        "Pictures/SundayRoast.jpg",
+        "Pictures/FishandChips.jpg",
+        "Pictures/FullEnglish.jpg",
+        "Pictures/ChickenCurry.jpg"
       ]
     }
   ]
