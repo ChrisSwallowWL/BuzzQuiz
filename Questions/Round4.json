@@ -1,85 +1,84 @@
 {
-  "type": "image",
+  "type": "text",
   "questions": [
     {
-      "question": "1) Which of these is a reef knot?",
+      "question": "When the moon is over 1/2 full what is it called?",
       "answers": [
-        "Pictures/Knot2.jpg",
-        "Pictures/Knot1.jpg",
-        "Pictures/Knot3.jpg",
-        "Pictures/Knot4.jpg"
+        "Gibbous",
+        "Nearly full",
+        "Cusp"
       ]
     },
     {
-      "question": "2) Which of these is the 1:25,000 OS map symbol for a public foot path?",
+      "question": "Which planet has a blue moon called Triton?",
       "answers": [
-        "Pictures/OS4.jpg",
-        "Pictures/OS1.jpg",
-        "Pictures/OS2.jpg",
-        "Pictures/OS3.jpg"
+        "Neptune",
+        "Pluto",
+        "Saturn"
       ]
     },
     {
-      "question": "3) Which of these leaves comes from an Ash tree?",
+      "question": "What is the name of the European space agency rocket first launched on 5 March 1984?",
       "answers": [
-        "Pictures/Ash.jpg",
-        "Pictures/Oak.jpg",
-        "Pictures/Sycamore.jpg",
-        "Pictures/Hornbeam.jpg"
+        "Ariane",
+        "Atlantis",
+        "Europa"
       ]
     },
     {
-      "question": "4) Which of these is the Chief Scout?",
+      "question": "The recent rise in the earth's temperature is called...?",
       "answers": [
-        "Pictures/BearGrylls.jpg",
-        "Pictures/KingCharles.jpg",
-        "Pictures/BadenPowell.jpg",
-        "Pictures/PrinceHarry.jpg"
+        "Greenhouse effect",
+        "Carbon effect",
+        "Thermal effect"
       ]
     },
     {
-      "question": "5) Which of these is the right thing to do with someone who has fainted?",
+      "question": "Where on earth does the sun rise?",
       "answers": [
-        "Pictures/Fainting.jpg",
-        "Pictures/CPR.jpg",
-        "Pictures/RecoveryPosition.jpg",
-        "Pictures/Heimlich.jpg"
+        "East",
+        "West",
+        "Varies"
       ]
     },
     {
-      "question": "6) Which of these is NOT a flag of a country within the British Isles?",
+      "question": "Which planet is furthest from the sun?",
       "answers": [
-        "Pictures/Flag3.jpg",
-        "Pictures/Flag1.jpg",
-        "Pictures/Flag2.jpg",
-        "Pictures/Flag4.jpg"
+        "Pluto",
+        "Venus",
+        "Saturn"
       ]
     },
     {
-      "question": "7) Which of these nasties is NOT native to the UK",
+      "question": "What is 'empty space' called?",
       "answers": [
-        "Pictures/Spider.jpg",
-        "Pictures/Leech.jpg",
-        "Pictures/Mosquito.jpg",
-        "Pictures/Tick.jpg"
+        "Ether",
+        "Black Hole",
+        "Stardust"
       ]
     },
     {
-      "question": "8) Which of these is the North York Moors National Park?",
+      "question": "What are comets made of?",
       "answers": [
-        "Pictures/NorthYorkMoors.jpg",
-        "Pictures/PeakDistrict.jpg",
-        "Pictures/YorkshireDales.jpg",
-        "Pictures/LakeDistrict.jpg"
+        "Ice",
+        "Gas",
+        "Liquid"
       ]
     },
     {
-      "question": "9) According to a recent YouGov survey, which of these is the most popular UK meal?",
+      "question": "What is the speed of light in miles per second?",
       "answers": [
-        "Pictures/SundayRoast.jpg",
-        "Pictures/FishandChips.jpg",
-        "Pictures/FullEnglish.jpg",
-        "Pictures/ChickenCurry.jpg"
+        "186,000",
+        "176,000",
+        "196,000"
+      ]
+    },
+    {
+      "question": "When does a sonic boom occur in miles per hour?",
+      "answers": [
+        "760",
+        "860",
+        "960"
       ]
     }
   ]
