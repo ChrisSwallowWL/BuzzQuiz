@@ -1,0 +1,85 @@
+{
+  "type": "text",
+  "questions": [
+    {
+      "question": "When was the first World Fresh Water Championship held?",
+      "answers": [
+        "1954",
+        "1955",
+        "1956"
+      ]
+    },
+    {
+      "question": "What are young pilchards called?",
+      "answers": [
+        "sardines",
+        "fry",
+        "sprats"
+      ]
+    },
+    {
+      "question": "What is a kipper?",
+      "answers": [
+        "smoked herring",
+        "smoked flounder",
+        "smoked haddock"
+      ]
+    },
+    {
+      "question": "What is the Portuguese \"bacalhau\" made from?",
+      "answers": [
+        "smoked cod",
+        "smoked mackerel",
+        "smoked herring"
+      ]
+    },
+    {
+      "question": "Which fish can live in both salt and fresh water?",
+      "answers": [
+        "Salmon",
+        "Sturgeon",
+        "Tench"
+      ]
+    },
+    {
+      "question": "What is the world's smallest fish?",
+      "answers": [
+        "Dwarf goby",
+        "blue chromis",
+        "whitebait"
+      ]
+    },
+    {
+      "question": "Which of these is not a fish?",
+      "answers": [
+        "Widgeon",
+        "Gudgeon",
+        "Sturgeon"
+      ]
+    },
+    {
+      "question": "Which zodiac sign is known as the \"The Fishes\"",
+      "answers": [
+        "Pisces",
+        "Aquarius",
+        "Sagittarius"
+      ]
+    },
+    {
+      "question": "When was the first World Fly fishing championship held?",
+      "answers": [
+        "1981",
+        "1979",
+        "1980"
+      ]
+    },
+    {
+      "question": "Where does a fish have its pelvic fin?",
+      "answers": [
+        "On its belly",
+        "on its back",
+        "on its side"
+      ]
+    }
+  ]
+}
