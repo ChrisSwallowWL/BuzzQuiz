@@ -1,0 +1,85 @@
+{
+  "type": "text",
+  "questions": [
+    {
+      "question": "Which motorway crosses the Pennines?",
+      "answers": [
+        "M62",
+        "M1",
+        "M6"
+      ]
+    },
+    {
+      "question": "In which county in Wales are the Brecon Beacons?",
+      "answers": [
+        "Powys",
+        "Avon",
+        "Gwent"
+      ]
+    },
+    {
+      "question": "Where in Yorkshire is Test Cricket played?",
+      "answers": [
+        "Headingley",
+        "Trentbridge",
+        "Bramall Lane"
+      ]
+    },
+    {
+      "question": "In which English county is the holiday resort Bournemouth?",
+      "answers": [
+        "Dorset",
+        "Devon",
+        "Hampshire"
+      ]
+    },
+    {
+      "question": "Gloucester, Shropshire, Leicester and Windsor all have something in common. What is it?",
+      "answers": [
+        "Cheeses",
+        "Famous educational establishments",
+        "Royal residences"
+      ]
+    },
+    {
+      "question": "Derby, Stafford and Poole are all famous for one particular thing. What is it?",
+      "answers": [
+        "Pottery",
+        "Horse Races",
+        "Cheese"
+      ]
+    },
+    {
+      "question": "Which mountains are called the backbone of Wales?",
+      "answers": [
+        "Cambrian",
+        "Grampians",
+        "Black"
+      ]
+    },
+    {
+      "question": "In one city, which river is crossed by the High Level, Swing and Queen Elizabeth II bridges?",
+      "answers": [
+        "Tyne (Newcastle)",
+        "Avon (Bristol)",
+        "Forth"
+      ]
+    },
+    {
+      "question": "Which is England's largest lake?",
+      "answers": [
+        "Windermere",
+        "Loch Lomond",
+        "Coniston Water"
+      ]
+    },
+    {
+      "question": "In Britain, which cathedral has the highest spire?",
+      "answers": [
+        "Salisbury",
+        "Canterbury",
+        "Winchester"
+      ]
+    }
+  ]
+}
