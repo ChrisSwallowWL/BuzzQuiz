@@ -1,0 +1,85 @@
+{
+  "type": "text",
+  "questions": [
+    {
+      "question": "Why does a compass needle point north?",
+      "answers": [
+        "The earth is like a magnet and needle points to the north pole",
+        "It always points away from the sun",
+        "Because of the pull of the 2 nearest planets"
+      ]
+    },
+    {
+      "question": "Why does mercury rise in a thermometer?",
+      "answers": [
+        "It increases in volume when the temperature rises",
+        "It rises when air pressure drops",
+        "It rises as air pressure rises"
+      ]
+    },
+    {
+      "question": "How does blood circulate around the body?",
+      "answers": [
+        "It is pumped by the heart",
+        "By movement of the body",
+        "It flows from the lungs as you breathe"
+      ]
+    },
+    {
+      "question": "We hear an echo when ...",
+      "answers": [
+        "Sound is bounced back from an object",
+        "We are in a cave",
+        "Everything is silent"
+      ]
+    },
+    {
+      "question": "How do insects breathe?",
+      "answers": [
+        "Through holes known as spiracles",
+        "Through their noses",
+        "Through their mouths"
+      ]
+    },
+    {
+      "question": "Why do we hear a radio?",
+      "answers": [
+        "Sound signals are transmitted through space",
+        "We switch it on",
+        "We plug it in"
+      ]
+    },
+    {
+      "question": "Why can we see distant objects better with a telescope?",
+      "answers": [
+        "A lens magnifier produces a magnified image",
+        "The image is compressed through a small opening",
+        "It brings them nearer"
+      ]
+    },
+    {
+      "question": "Why does a candlewick continue to burn?",
+      "answers": [
+        "The wick is saturated with wax",
+        "It is enclosed in a cylinder of wax",
+        "It is made from special material"
+      ]
+    },
+    {
+      "question": "How is water from a fire engine propelled to a great height?",
+      "answers": [
+        "By a pump on the engine",
+        "By extending the hosepipe",
+        "by adjusting the nozzle"
+      ]
+    },
+    {
+      "question": "Why do balloons filled with helium rise?",
+      "answers": [
+        "Helium is lighter than air",
+        "Helium is a very energetic gas",
+        "Helium propels them"
+      ]
+    }
+  ]
+}

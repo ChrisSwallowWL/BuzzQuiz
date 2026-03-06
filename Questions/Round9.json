@@ -1,0 +1,85 @@
+{
+  "type": "text",
+  "questions": [
+    {
+      "question": "Which state in Australia is an island?",
+      "answers": [
+        "Tasmania",
+        "Queensland",
+        "New South Wales"
+      ]
+    },
+    {
+      "question": "In which ocean is New Guinea?",
+      "answers": [
+        "Pacific",
+        "Atlantic",
+        "Indian"
+      ]
+    },
+    {
+      "question": "Which European capital was virtually destroyed by an earthquake in 1755?",
+      "answers": [
+        "Lisbon",
+        "Budapest",
+        "Warsaw"
+      ]
+    },
+    {
+      "question": "Name the ship in which Captain Scott made his first Antarctic expedition",
+      "answers": [
+        "Discovery",
+        "Endeavour",
+        "Redoubtable"
+      ]
+    },
+    {
+      "question": "Who was the famous medieval traveller who left Venice in 1271 to explore Asia?",
+      "answers": [
+        "Marco Polo",
+        "Vasco de Gama",
+        "Giovanni Bellini"
+      ]
+    },
+    {
+      "question": "What is the official language of Mozambique?",
+      "answers": [
+        "Portuguese",
+        "French",
+        "English"
+      ]
+    },
+    {
+      "question": "Which city is served by Schiphol airport?",
+      "answers": [
+        "Amsterdam",
+        "Rotterdam",
+        "Brussels"
+      ]
+    },
+    {
+      "question": "Which American state was purchased from the Russians in 1867?",
+      "answers": [
+        "Alaska",
+        "Louisiana",
+        "California"
+      ]
+    },
+    {
+      "question": "Which American state is sometimes called 'The Green Mountain'?",
+      "answers": [
+        "Vermont",
+        "New Hampshire",
+        "Washington State"
+      ]
+    },
+    {
+      "question": "Which island in the Indian Ocean is 223 miles north of Java head?",
+      "answers": [
+        "Christmas Island",
+        "Sri Lanka",
+        "Easter Island"
+      ]
+    }
+  ]
+}

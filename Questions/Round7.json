@@ -1,0 +1,85 @@
+{
+  "type": "text",
+  "questions": [
+    {
+      "question": "What is a greenhorn?",
+      "answers": [
+        "someone who is naive",
+        "A breed of cattle",
+        "a breed of sheep"
+      ]
+    },
+    {
+      "question": "Who would wait in a green room?",
+      "answers": [
+        "Actors",
+        "Members of the jury",
+        "hospital patients"
+      ]
+    },
+    {
+      "question": "What colour is indigo?",
+      "answers": [
+        "deep blue/violet",
+        "beige",
+        "muddy brown"
+      ]
+    },
+    {
+      "question": "What colour is ormolu?",
+      "answers": [
+        "Gold/bronze",
+        "Deep pink",
+        "Yellowish-green"
+      ]
+    },
+    {
+      "question": "What colour are laburnum flowers?",
+      "answers": [
+        "Yellow",
+        "Lilac",
+        "Pink"
+      ]
+    },
+    {
+      "question": "If you are celebrating a ruby anniversary, how many years are you celebrating?",
+      "answers": [
+        "40",
+        "20",
+        "30"
+      ]
+    },
+    {
+      "question": "What is the colour of ripe bilberries?",
+      "answers": [
+        "blue",
+        "green",
+        "red"
+      ]
+    },
+    {
+      "question": "Sepia is a shade of what colour?",
+      "answers": [
+        "Brown",
+        "Black",
+        "Grey"
+      ]
+    },
+    {
+      "question": "What are the two main colours of the flag of the City of London?",
+      "answers": [
+        "Red & White",
+        "Blue & White",
+        "Green & Yellow"
+      ]
+    },
+    {
+      "question": "What colours is the Cornish flag?",
+      "answers": [
+        "Black & White",
+        "Blue & White",
+        "Green & White"
+      ]
+    }
+  ]
+}
