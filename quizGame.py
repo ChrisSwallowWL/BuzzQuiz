@@ -76,7 +76,7 @@ def set_label(label, text, colour):
     img = Image.open("Pictures/" + colour + ".jpg")
     resized_image = img.resize((750, 420), Image.Resampling.LANCZOS)
     image = ImageTk.PhotoImage(resized_image)
-    label.config(image=image, text=text, width=740, height=450)
+    label.config(image=image, text=text, width=740, height=450, font=big_font)
     label.image = image
 
 
@@ -160,6 +160,34 @@ def set_answers(answer_colour, answer):
         print(answer_colour + " " + answer)
 
 
+def strikeout_answer(colour):
+    strike_font = ("Sans", 30, "overstrike")
+    if colour.lower() == "blue":
+        blue_answer.configure(font=strike_font)
+    elif colour.lower() == "orange":
+        orange_answer.configure(font=strike_font)
+    elif colour.lower() == "green":
+        green_answer.configure(font=strike_font)
+    elif colour.lower() == "yellow":
+        yellow_answer.configure(font=strike_font)
+
+
+def show_wrong_indicator():
+    wrong_label = Label(root, text="X", font=("Sans", 400, "bold"), fg="red")
+    wrong_label.place(relx=0.5, rely=0.5, anchor="center")
+    root.update()
+    time.sleep(1)
+    wrong_label.destroy()
+
+
+def show_correct_indicator():
+    correct_label = Label(root, text="✓", font=("Sans", 400, "bold"), fg="green")
+    correct_label.place(relx=0.5, rely=0.5, anchor="center")
+    root.update()
+    time.sleep(1)
+    correct_label.destroy()
+
+
 def wait_for_buzz(question_number):
     question_answered = False
     available_answers = ["Blue", "Orange", "Green", "Yellow"]
@@ -174,6 +202,9 @@ def wait_for_buzz(question_number):
     buzz.get_button_pressed(0)
 
     while not question_answered:
+        if len(available_controllers) == 0:
+            startButton['state'] = NORMAL
+            break
 
         # Start the lights blinking and wait for a button press
         _thread.start_new_thread(buzz.light_blink, (available_controllers,))
@@ -190,22 +221,26 @@ def wait_for_buzz(question_number):
 
             if button and button != "red":
                 if button == question["correct"]:
-                    play_sound('Sounds/bell.wav', 1)
+                    play_sound('Sounds/bell.wav', 0)
+                    show_correct_indicator()
                     print("Controller " + str(controller + 1) + " was correct")
                     question_answered = True
                     update_score(controller, 1)
                     startButton['state'] = NORMAL
                     break
                 elif button.capitalize() in available_answers:
-                    play_sound('Sounds/wrong.wav', 1)
+                    play_sound('Sounds/wrong.wav', 0)
+                    show_wrong_indicator()
                     print("Sorry incorrect answer")
+                    strikeout_answer(button)
                     available_controllers.remove(controller)
-                    # available_answers.remove(button.capitalize())
+                    available_answers.remove(button.capitalize())
                     break
             time.sleep(0.2)
             countdown -= 0.2
             if countdown < 0:
-                play_sound('Sounds/wrong.wav', 1)
+                play_sound('Sounds/wrong.wav', 0)
+                show_wrong_indicator()
                 available_controllers.remove(controller)
                 break
         buzz.light_set(controller, False)
