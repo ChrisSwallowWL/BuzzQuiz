@@ -84,6 +84,7 @@ class BuzzController:
     def controller_get_first_pressed(self, buzz_button, controllers=None):
         if controllers is None:
             controllers = [0, 1, 2, 3]
+        self.clear_status()
         while True:
             buttons = self.get_button_status()
             for i in controllers:
@@ -102,3 +103,11 @@ class BuzzController:
     def light_set(self, controller, status):
         self.light_array[controller + 2] = 0xFF if status else 0x00
         self.hid.write(self.light_array)
+
+    def clear_status(self):
+        self.button_state = [
+            {"red": False, "blue": False, "orange": False, "green": False, "yellow": False},
+            {"red": False, "blue": False, "orange": False, "green": False, "yellow": False},
+            {"red": False, "blue": False, "orange": False, "green": False, "yellow": False},
+            {"red": False, "blue": False, "orange": False, "green": False, "yellow": False}
+        ]

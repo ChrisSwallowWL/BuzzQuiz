@@ -1,0 +1,106 @@
+{
+  "name": "Stick!",
+  "type": "music",
+  "questions": [
+    {
+      "question": "1) What Language?",
+      "track": "Sounds/StickEnglish.wav",
+      "answers": [
+        "English",
+        "French",
+        "Dutch",
+        "Norwegian"
+      ]
+    },
+    {
+      "question": "2) What Language?",
+      "track": "Sounds/StickFrench.wav",
+      "answers": [
+        "French",
+        "Turkish",
+        "Dutch",
+        "Norwegian"
+      ]
+    },
+    {
+      "question": "3) What Language?",
+      "track": "Sounds/StickMandarin.wav",
+      "answers": [
+        "Mandarin",
+        "French",
+        "Polish",
+        "Croatian"
+      ]
+    },
+    {
+      "question": "4) What Language?",
+      "track": "Sounds/StickTurkish.wav",
+      "answers": [
+        "Turkish",
+        "French",
+        "Polish",
+        "Spanish"
+      ]
+    },
+    {
+      "question": "5) What Language?",
+      "track": "Sounds/StickItalian.wav",
+      "answers": [
+        "Italian",
+        "Cantonese",
+        "Turkish",
+        "English"
+      ]
+    },
+    {
+      "question": "6) What Language?",
+      "track": "Sounds/StickCantonese.wav",
+      "answers": [
+        "Cantonese",
+        "French",
+        "Polish",
+        "Mandarin"
+      ]
+    },
+    {
+      "question": "7) What Language?",
+      "track": "Sounds/StickPortugese.wav",
+      "answers": [
+        "Portugese",
+        "Cantonese",
+        "Mandarin",
+        "Turkish"
+      ]
+    },
+    {
+      "question": "8) What Language?",
+      "track": "Sounds/StickCroatian.wav",
+      "answers": [
+        "Croatian",
+        "Polish",
+        "Dutch",
+        "Spanish"
+      ]
+    },
+    {
+      "question": "9) What Language?",
+      "track": "Sounds/StickSpanish.wav",
+      "answers": [
+        "Spanish",
+        "French",
+        "English",
+        "Turkish"
+      ]
+    },
+    {
+      "question": "10) What Language?",
+      "track": "Sounds/StickPolish.wav",
+      "answers": [
+        "Polish",
+        "French",
+        "Mandarin",
+        "Turkish"
+      ]
+    }
+  ]
+}
