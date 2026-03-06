@@ -4,7 +4,7 @@ import time
 import _thread
 import json
 from os import path
-from tkinter import Tk, StringVar, Label, Button, Frame, DISABLED, NORMAL
+from tkinter import Tk, StringVar, Label, Button, Frame, DISABLED, NORMAL, Canvas
 from PIL import ImageTk, Image
 
 from BuzzController import BuzzController
@@ -30,11 +30,16 @@ def load_questions(file):
     questions_json = json.load(question_file)
     question_type = questions_json['type']
     for q in questions_json['questions']:
-        buttons = ["blue", "orange", "green", "yellow"]
+        num_answers = len(q["answers"])
+        if num_answers == 4:
+            buttons = ["blue", "orange", "green", "yellow"]
+        else:
+            buttons = ["blue", "orange", "green"]
         new_answer = {}
         shuffle(buttons)
         new_answer['question'] = q['question']
-        for i in range(4):
+        new_answer['answer_count'] = num_answers
+        for i in range(num_answers):
             if i == 0:
                 new_answer["correct"] = buttons[i]
             new_answer[buttons[i]] = q["answers"][i]
@@ -70,23 +75,23 @@ def reset():
     set_image(orange_answer, "Pictures/Orange.jpg")
     set_image(green_answer, "Pictures/Green.jpg")
     set_image(yellow_answer, "Pictures/Yellow.jpg")
+    green_frame.grid(row=6, column=1, columnspan=2, rowspan=2)
+    yellow_frame.grid_forget()
 
 
 def set_label(label, text, colour):
     img = Image.open("Pictures/" + colour + ".jpg")
-    resized_image = img.resize((750, 420), Image.Resampling.LANCZOS)
+    resized_image = img.resize((750, 250), Image.Resampling.LANCZOS)
     image = ImageTk.PhotoImage(resized_image)
-    label.config(image=image, text=text, width=740, height=450, font=big_font)
+    label.config(image=image, text=text, width=740, height=250, font=big_font)
     label.image = image
 
 
 def set_image(label, file):
     img = Image.open(file)
-    width = int(img.size[0])
-    height = int(img.size[1])
-    resized_image = img.resize((width, height), Image.Resampling.LANCZOS)
+    resized_image = img.resize((750, 250), Image.Resampling.LANCZOS)
     image = ImageTk.PhotoImage(resized_image)
-    label.configure(text="", image=image, width=width, height=height)
+    label.configure(text="", image=image, width=750, height=250)
     label.image = image
 
 
@@ -190,11 +195,21 @@ def show_correct_indicator():
 
 def wait_for_buzz(question_number):
     question_answered = False
-    available_answers = ["Blue", "Orange", "Green", "Yellow"]
+    question = questions[question_number]
+    num_answers = question.get('answer_count', 3)
+
+    if num_answers == 4:
+        available_answers = ["Blue", "Orange", "Green", "Yellow"]
+        green_frame.grid(row=6, column=0, columnspan=2, rowspan=2)
+        yellow_frame.grid(row=6, column=2, columnspan=2, rowspan=2)
+    else:
+        available_answers = ["Blue", "Orange", "Green"]
+        green_frame.grid(row=6, column=1, columnspan=2, rowspan=2)
+        yellow_frame.grid_forget()
+
     available_controllers = [0, 1, 2, 3]
 
     # Display the answers for the current question
-    question = questions[question_number]
     for answer in available_answers:
         set_answers(answer, question[answer.lower()])
 
@@ -266,38 +281,56 @@ medium_font = ("Sans", 20)
 
 # ScoreFrame
 scoreFrame = Frame(root)
-scoreFrame.grid(row=0, column=0, columnspan=8)
+scoreFrame.grid(row=0, column=0, columnspan=4)
 scoreLabel = Label(scoreFrame, text="Scores", justify="center", font=medium_font)
-scoreLabel.grid(row=0, column=0, columnspan=8)
-score1Frame = Frame(scoreFrame, borderwidth=2, relief="raised")
-score1Frame.grid(row=1, column=0)
-score2Frame = Frame(scoreFrame, borderwidth=2, relief="raised")
-score2Frame.grid(row=1, column=1)
-score3Frame = Frame(scoreFrame, borderwidth=2, relief="raised")
-score3Frame.grid(row=1, column=2)
-score4Frame = Frame(scoreFrame, borderwidth=2, relief="raised")
-score4Frame.grid(row=1, column=3)
+scoreLabel.pack()
 
-team1_label = Label(score1Frame, text="Team 1", justify="right", font=medium_font)
-team1_score = Label(score1Frame, text=0, justify="right", width=20, font=medium_font, fg=team1colour)
-team1_label.grid(row=0, column=0)
-team1_score.grid(row=1, column=0)
+def round_rectangle(canvas, x1, y1, x2, y2, radius=25, **kwargs):
+    points = [x1+radius, y1,
+              x1+radius, y1,
+              x2-radius, y1,
+              x2-radius, y1,
+              x2, y1,
+              x2, y1+radius,
+              x2, y1+radius,
+              x2, y2-radius,
+              x2, y2-radius,
+              x2, y2,
+              x2-radius, y2,
+              x2-radius, y2,
+              x1+radius, y2,
+              x1+radius, y2,
+              x1, y2,
+              x1, y2-radius,
+              x1, y2-radius,
+              x1, y1+radius,
+              x1, y1+radius,
+              x1, y1]
+    return canvas.create_polygon(points, **kwargs, smooth=True)
 
-team2_label = Label(score2Frame, text="Team 2", justify="right", font=medium_font)
-team2_score = Label(score2Frame, justify="right", width=20, font=medium_font, fg=team2colour)
-team2_label.grid(row=0, column=0)
-team2_score.grid(row=1, column=0)
+def create_score_box(parent, team_name, color):
+    canvas = Canvas(parent, width=250, height=120, highlightthickness=0)
+    round_rectangle(canvas, 5, 5, 245, 115, radius=20, fill="white", outline="gray", width=2)
+    lbl_name = Label(canvas, text=team_name, font=medium_font, bg="white")
+    lbl_score = Label(canvas, text="0", font=medium_font, fg=color, bg="white")
+    canvas.create_window(125, 40, window=lbl_name)
+    canvas.create_window(125, 85, window=lbl_score)
+    return canvas, lbl_score
 
-team3_label = Label(score3Frame, text="Team 3", justify="right", font=medium_font)
-team3_score = Label(score3Frame, justify="right", width=20, font=medium_font, fg=team3colour)
-team3_score.config()
-team3_label.grid(row=0, column=0)
-team3_score.grid(row=1, column=0)
+scoreContainer = Frame(scoreFrame)
+scoreContainer.pack()
 
-team4_label = Label(score4Frame, text="Team 4", justify="right", font=medium_font)
-team4_score = Label(score4Frame, justify="right", width=20, font=medium_font, fg=team4colour)
-team4_label.grid(row=0, column=0)
-team4_score.grid(row=1, column=0)
+c1, team1_score = create_score_box(scoreContainer, "Team 1", team1colour)
+c1.pack(side="left", padx=10)
+
+c2, team2_score = create_score_box(scoreContainer, "Team 2", team2colour)
+c2.pack(side="left", padx=10)
+
+c3, team3_score = create_score_box(scoreContainer, "Team 3", team3colour)
+c3.pack(side="left", padx=10)
+
+c4, team4_score = create_score_box(scoreContainer, "Team 4", team4colour)
+c4.pack(side="left", padx=10)
 
 
 def time_minus():
@@ -335,29 +368,28 @@ Label(questionFrame, justify="center").grid(row=0, column=0)
 questionLabel = Label(questionFrame, justify="center", font=big_font, wraplength=1500)
 questionLabel.grid(row=0, column=2)
 
-blue_frame = Frame(root, width=750, height=400, borderwidth=8, background="blue")
+blue_frame = Frame(root, width=750, height=250, borderwidth=8, background="blue")
 blue_frame.grid(row=4, column=0, columnspan=2, rowspan=2)
 blue_frame.grid_propagate(False)
 blue_answer = Label(blue_frame, width=56, height=19, anchor="center", compound="center", font=big_font, fg="orange",
                     background="blue", wraplength=700)
 blue_answer.grid(row=0, column=0, columnspan=1)
 
-orange_frame = Frame(root, width=750, height=400, borderwidth=8, background="orange")
+orange_frame = Frame(root, width=750, height=250, borderwidth=8, background="orange")
 orange_frame.grid(row=4, column=2, columnspan=2, rowspan=2)
 orange_frame.grid_propagate(False)
 orange_answer = Label(orange_frame, width=56, height=19, compound="center", font=big_font, fg="blue",
                       background="orange", wraplength=700)
 orange_answer.grid(row=0, column=1, columnspan=1)
 
-green_frame = Frame(root, width=750, height=400, borderwidth=8, background="green")
-green_frame.grid(row=6, column=0, columnspan=2, rowspan=2)
+green_frame = Frame(root, width=750, height=250, borderwidth=8, background="green")
+green_frame.grid(row=6, column=1, columnspan=2, rowspan=2)
 green_frame.grid_propagate(False)
 green_answer = Label(green_frame, width=56, height=19, compound="center", font=big_font, fg="white", background="green",
                      wraplength=700)
 green_answer.grid(row=1, column=0, columnspan=1)
 
-yellow_frame = Frame(root, width=750, height=400, borderwidth=8, background="yellow")
-yellow_frame.grid(row=6, column=2, columnspan=2, rowspan=2)
+yellow_frame = Frame(root, width=750, height=250, borderwidth=8, background="yellow")
 yellow_frame.grid_propagate(False)
 yellow_answer = Label(yellow_frame, width=56, height=19, compound="center", font=big_font, fg="purple",
                       background="yellow", wraplength=700)

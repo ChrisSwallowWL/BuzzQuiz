@@ -1,24 +1,84 @@
 {
-  "type": "music",
+  "type": "text",
   "questions": [
     {
-      "question": "Which year did the lead singer of this band die?",
-      "track": "Sounds/Nirvana.wav",
+      "question": "Which part of a flag is nearest the staff?",
       "answers": [
-        "1994",
-        "1996",
-        "2002",
-        "2004"
+        "The Hoist",
+        "The Fly",
+        "The Head"
       ]
     },
     {
-      "question": "What does Mariah want for Christmas?",
-      "track": "Sounds/Mariah.wav",
+      "question": "When does a ship fly a yellow flag?",
       "answers": [
-        "You",
-        "A new car",
-        "Money",
-        "A slap"
+        "when it has infectious disease aboard",
+        "When leaving port",
+        "when needing assistance"
+      ]
+    },
+    {
+      "question": "Which country has a flag which is not rectangular?",
+      "answers": [
+        "Nepal",
+        "Greece",
+        "Indonesia"
+      ]
+    },
+    {
+      "question": "Which country has a flag which if flown upside down is the flag of another country?",
+      "answers": [
+        "Poland (Indonesia/Monaco)",
+        "Ghana",
+        "India"
+      ]
+    },
+    {
+      "question": "Which of the following countries does not have red on its flag?",
+      "answers": [
+        "Sweden",
+        "France",
+        "Switzerland"
+      ]
+    },
+    {
+      "question": "If you see a red flag on a beach, what does it mean?",
+      "answers": [
+        "not safe to swim",
+        "safe to swim",
+        "award for clean water"
+      ]
+    },
+    {
+      "question": "On what side of the troop flag should the Union flag be when carried marching?",
+      "answers": [
+        "to the right",
+        "In front",
+        "to the left"
+      ]
+    },
+    {
+      "question": "In what year where the Scottish and English flags united to form the national flag?",
+      "answers": [
+        "1707",
+        "1706",
+        "1708"
+      ]
+    },
+    {
+      "question": "How would you know if the Queen was in residence?",
+      "answers": [
+        "The royal standard would be flying",
+        "The Union Flag would be flying",
+        "The flag of the Guards on duty would be flying"
+      ]
+    },
+    {
+      "question": "If you were at a Jamboree and saw a national flag being hoisted what would you do?",
+      "answers": [
+        "salute it (if in uniform)",
+        "tell your friends",
+        "stand alert"
       ]
     }
   ]

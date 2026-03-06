@@ -2,93 +2,83 @@
   "type": "text",
   "questions": [
     {
-      "question": "On ‘I’m a celebrity get me out of here’, who is the only contestant that does not get to walk over the bridge with the fire works going off either side?",
+      "question": "What is a Corgi?",
       "answers": [
-        "The runner up",
-        "The Winner",
-        "The third placed contestant",
-        "The first to be evicted"
+        "a dog",
+        "a cat",
+        "a rabbit"
       ]
     },
     {
-      "question": "At what speed does a vinyl LP album rotate at?",
+      "question": "What is made from sturgeon's eggs?",
       "answers": [
-        "33 rpm",
-        "45 rpm",
-        "78 rpm",
-        "100 rpm"
+        "Caviar",
+        "Mustard",
+        "Paste"
       ]
     },
     {
-      "question": "Which blood type can be given to anybody?",
+      "question": "What is the name given to a group of owls?",
       "answers": [
-        "O -",
-        "A +",
-        "B -",
-        "AB +"
+        "Parliament",
+        "Pack",
+        "Hoot"
       ]
     },
     {
-      "question": "Which of these is OK for a strict Vegan?",
+      "question": "What term means dog-like?",
       "answers": [
-        "Cream crackers",
-        "Vegi burger",
-        "Honey",
-        "Red Wine"
+        "canine",
+        "bovine",
+        "vulpine"
       ]
     },
     {
-      "question": "Which of these phobias could no one have had before 1973?",
+      "question": "Which of these is a tooth?",
       "answers": [
-        "Nomophobia",
-        "Plutophobia",
-        "Arachibutyrophobia",
-        "Optophobia"
+        "Molar",
+        "Ulna",
+        "Tibia"
       ]
     },
     {
-      "question": "What is the first thing you do, if you see someone choking?",
+      "question": "What is the name given to a group of leopards?",
       "answers": [
-        "Ask them to lean forward and cough",
-        "Pat them sharply on the back between the shoulder blades",
-        "Stand behind them, clasp your hands around them and thrust upwards into their chest",
-        "Give them a glass of water and ask then to drink it all down swiftly"
+        "Leap",
+        "Pain",
+        "Fleet"
       ]
     },
     {
-      "question": "If Nottingham Forest were at the bottom of the premier League (a temporary phenomenon) and Derby County were at the Top of Division One (fat chance), how many teams would separate them in the football league ?",
+      "question": "Which tree supplies conkers?",
       "answers": [
-        "24",
-        "20",
-        "36",
-        "48"
+        "Horse chestnut",
+        "Sweet Chestnut",
+        "Larch"
       ]
     },
     {
-      "question": "If a zombie set off in a Volkswagen Up doing 15 mph, Frankenstein follows just over a minute later in a Hyundai i10 doing 20 mph, followed just over a minutes later by a Werewolf doing 30 mph in a Kia Picanto, and then another minute later by Dracula in a Subaru Impreza doing 60 mph, who would the Zombie see in his rear view mirror after he has travelled just over a mile?",
+      "question": "What is a natterjack?",
       "answers": [
-        "No one",
-        "Frankenstein",
-        "the Werewolf",
-        "Dracula"
+        "Toad",
+        "Argument",
+        "Quarrel"
       ]
     },
     {
-      "question": "Which of these drinks contain the most sugar per 100 ml?",
+      "question": "What is a young swan called?",
       "answers": [
-        "Old Jamaica Ginger Beer",
-        "Red bull",
-        "Coca Cola",
-        "Orange juice"
+        "Cygnet",
+        "Swanlet",
+        "Gump"
       ]
     },
     {
-      "question": "What makes up 80% of your brain?",
+      "question": "Who is king of the beasts?",
       "answers": [
-        "Water",
-        "Fat",
-        "Neurons",
-        "Air"
+        "Lion",
+        "Tiger",
+        "Elephant"
       ]
     }
   ]
