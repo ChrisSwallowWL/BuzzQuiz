@@ -1,0 +1,96 @@
+{
+  "name": "News",
+  "type": "text",
+  "questions": [
+    {
+      "question": "1) Which popstar is dating American Footballer Travis Kelce?",
+      "answers": [
+        "Taylor Swift",
+        "Ed Sheeran",
+        "Beyonce",
+        "Dolly Parton"
+      ]
+    },
+    {
+      "question": "2) Which country successfully landed a spacecraft on the moon on January 20th 2024?",
+      "answers": [
+        "Japan",
+        "India",
+        "China",
+        "Russia"
+      ]
+    },
+    {
+      "question": "3) Which football manager recently announced his intention to resign from Liverpool?",
+      "answers": [
+        "Jurgen Klopp",
+        "Wayne Rooney",
+        "Kenny Dalglish",
+        "Gary Linneker"
+      ]
+    },
+    {
+      "question": "4) Which former attorney declared Bankruptcy after being found guilty of defamation of election workers in the USA?",
+      "answers": [
+        "Rudy Guiliani",
+        "Kenneth Chesebro",
+        "Sidney Powell",
+        "Sidney Poitier"
+      ]
+    },
+    {
+      "question": "5) Which billionaire announced that they had implanted a wireless brain chip in a human?",
+      "answers": [
+        "Elon Musk",
+        "Jeff Bezos",
+        "Donald Trump",
+        "Donald Duck"
+      ]
+    },
+    {
+      "question": "6) What was the name of the storm that resulted in flooding across the UK in January 2024?",
+      "answers": [
+        "Henk",
+        "Hank",
+        "Honk",
+        "Hink"
+      ]
+    },
+    {
+      "question": "7) Which group based in the Yemen has been attacking shipping through the Red Sea?",
+      "answers": [
+        "Houthis",
+        "Wombles",
+        "Taliban",
+        "Ansar Al-Sharia"
+      ]
+    },
+    {
+      "question": "8) Who replaced Suella Braverman as the Foreign Secretary in November last year?",
+      "answers": [
+        "David Cameron",
+        "Boris Johnson",
+        "Satan",
+        "Nigel Farrage"
+      ]
+    },
+    {
+      "question": "9) What country do the government want to send people seeking asylum in small boats to?",
+      "answers": [
+        "Rwanda",
+        "Djibouti",
+        "Russia",
+        "Liechtenstein"
+      ]
+    },
+    {
+      "question": "10) How much money has the EU agreed to supply to Ukraine this week?",
+      "answers": [
+        "€50 billion",
+        "€5 billion",
+        "€500 billion",
+        "€2"
+      ]
+    }
+  ]
+}
