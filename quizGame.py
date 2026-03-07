@@ -33,8 +33,10 @@ def load_questions(file):
         num_answers = len(q["answers"])
         if num_answers == 4:
             buttons = ["blue", "orange", "green", "yellow"]
-        else:
+        elif num_answers == 3:
             buttons = ["blue", "orange", "green"]
+        else:
+            buttons = ["blue", "orange"]
         new_answer = {}
         shuffle(buttons)
         new_answer['question'] = q['question']
@@ -76,6 +78,7 @@ def reset():
     set_label(orange_answer, "Orange", "Orange")
     set_label(green_answer, "Green", "Green")
     set_label(yellow_answer, "Yellow", "Yellow")
+    green_answer.pack(fill="x", pady=5)
     yellow_answer.pack_forget()
 
 
@@ -197,9 +200,15 @@ def wait_for_buzz(question_number):
 
     if num_answers == 4:
         available_answers = ["Blue", "Orange", "Green", "Yellow"]
+        green_answer.pack(fill="x", pady=5)
         yellow_answer.pack(fill="x", pady=5)
-    else:
+    elif num_answers == 3:
         available_answers = ["Blue", "Orange", "Green"]
+        green_answer.pack(fill="x", pady=5)
+        yellow_answer.pack_forget()
+    else:
+        available_answers = ["Blue", "Orange"]
+        green_answer.pack_forget()
         yellow_answer.pack_forget()
 
     available_controllers = [0, 1, 2, 3]
