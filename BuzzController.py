@@ -75,15 +75,17 @@ class BuzzController:
             self.button_state[3]["blue"] = ((data[4] & 0x08) != 0)  # blue
         return self.button_state
 
-    def get_button_pressed(self, controller):
+    def get_button_pressed(self, controller, allowed_buttons=None):
         buttons = self.get_button_status()
         for key, value in buttons[controller].items():
             if value:
-                return key
+                if allowed_buttons is None or key in allowed_buttons:
+                    return key
 
     def controller_get_first_pressed(self, buzz_button, controllers=None):
         if controllers is None:
             controllers = [0, 1, 2, 3]
+        self.flush_input()
         self.clear_status()
         while True:
             buttons = self.get_button_status()
@@ -111,3 +113,9 @@ class BuzzController:
             {"red": False, "blue": False, "orange": False, "green": False, "yellow": False},
             {"red": False, "blue": False, "orange": False, "green": False, "yellow": False}
         ]
+
+    def flush_input(self):
+        while True:
+            data = self.hid.read(5)
+            if not data:
+                break

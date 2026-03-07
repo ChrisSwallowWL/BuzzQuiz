@@ -71,27 +71,24 @@ def reset():
     startButton['state'] = NORMAL
 
     questionLabel.configure(text="Press Start to Begin")
-    set_image(blue_answer, "Pictures/Blue.jpg")
-    set_image(orange_answer, "Pictures/Orange.jpg")
-    set_image(green_answer, "Pictures/Green.jpg")
-    set_image(yellow_answer, "Pictures/Yellow.jpg")
-    green_frame.grid(row=6, column=1, columnspan=2, rowspan=2)
-    yellow_frame.grid_forget()
+    
+    set_label(blue_answer, "Blue", "Blue")
+    set_label(orange_answer, "Orange", "Orange")
+    set_label(green_answer, "Green", "Green")
+    set_label(yellow_answer, "Yellow", "Yellow")
+    yellow_answer.pack_forget()
 
 
 def set_label(label, text, colour):
-    img = Image.open("Pictures/" + colour + ".jpg")
-    resized_image = img.resize((750, 250), Image.Resampling.LANCZOS)
-    image = ImageTk.PhotoImage(resized_image)
-    label.config(image=image, text=text, width=740, height=250, font=big_font)
-    label.image = image
+    label.config(image='', text="● " + text, fg=colour.lower(), font=big_font, width=50, height=2, anchor="center", justify="center")
+    label.image = None
 
 
 def set_image(label, file):
     img = Image.open(file)
-    resized_image = img.resize((750, 250), Image.Resampling.LANCZOS)
+    resized_image = img.resize((300, 200), Image.Resampling.LANCZOS)
     image = ImageTk.PhotoImage(resized_image)
-    label.configure(text="", image=image, width=750, height=250)
+    label.configure(text="", image=image, width=300, height=200)
     label.image = image
 
 
@@ -200,12 +197,10 @@ def wait_for_buzz(question_number):
 
     if num_answers == 4:
         available_answers = ["Blue", "Orange", "Green", "Yellow"]
-        green_frame.grid(row=6, column=0, columnspan=2, rowspan=2)
-        yellow_frame.grid(row=6, column=2, columnspan=2, rowspan=2)
+        yellow_answer.pack(fill="x", pady=5)
     else:
         available_answers = ["Blue", "Orange", "Green"]
-        green_frame.grid(row=6, column=1, columnspan=2, rowspan=2)
-        yellow_frame.grid_forget()
+        yellow_answer.pack_forget()
 
     available_controllers = [0, 1, 2, 3]
 
@@ -222,6 +217,7 @@ def wait_for_buzz(question_number):
             break
 
         # Start the lights blinking and wait for a button press
+        buzz.clear_status()
         _thread.start_new_thread(buzz.light_blink, (available_controllers,))
         controller = buzz.controller_get_first_pressed("red", available_controllers)
         buzz.light_blink_stop()
@@ -231,7 +227,9 @@ def wait_for_buzz(question_number):
 
         countdown = int(timeLabel['text'])
         while True:
-            button = buzz.get_button_pressed(controller)
+            # Convert available answers to lowercase for button checking
+            allowed_buttons = [ans.lower() for ans in available_answers]
+            button = buzz.get_button_pressed(controller, allowed_buttons)
             buzz.light_blink_stop()
 
             if button and button != "red":
@@ -279,8 +277,12 @@ root.option_add('*Dialog.msg.font', 'Sans 10')
 big_font = ("Sans", 30)
 medium_font = ("Sans", 20)
 
+# Create a main frame to hold all content and center it
+main_frame = Frame(root)
+main_frame.place(relx=0.5, rely=0.5, anchor="center")
+
 # ScoreFrame
-scoreFrame = Frame(root)
+scoreFrame = Frame(main_frame)
 scoreFrame.grid(row=0, column=0, columnspan=4)
 scoreLabel = Label(scoreFrame, text="Scores", justify="center", font=medium_font)
 scoreLabel.pack()
@@ -349,7 +351,7 @@ def time_reset():
     timeLabel.configure(text=3)
 
 
-timeFrame = Frame(root, borderwidth=5)
+timeFrame = Frame(main_frame, borderwidth=5)
 timeFrame.grid(row=1, column=0, columnspan=4)
 Label(timeFrame, text="Time:", justify="right", font=medium_font).grid(row=0, column=0, sticky='e')
 minusButton = Button(timeFrame, text="-", width=1, command=time_minus)
@@ -362,43 +364,31 @@ falseStartButton = Button(timeFrame, text="Reset", width=2, command=time_reset)
 falseStartButton.grid(row=0, column=4)
 
 # Label displaying question # and associated buttons
-questionFrame = Frame(root, borderwidth=5)
+questionFrame = Frame(main_frame, borderwidth=5)
 questionFrame.grid(row=2, column=0, columnspan=4, rowspan=2)
 Label(questionFrame, justify="center").grid(row=0, column=0)
 questionLabel = Label(questionFrame, justify="center", font=big_font, wraplength=1500)
 questionLabel.grid(row=0, column=2)
 
-blue_frame = Frame(root, width=750, height=250, borderwidth=8, background="blue")
-blue_frame.grid(row=4, column=0, columnspan=2, rowspan=2)
-blue_frame.grid_propagate(False)
-blue_answer = Label(blue_frame, width=56, height=19, anchor="center", compound="center", font=big_font, fg="orange",
-                    background="blue", wraplength=700)
-blue_answer.grid(row=0, column=0, columnspan=1)
+answersFrame = Frame(main_frame)
+answersFrame.grid(row=4, column=0, columnspan=4, sticky="n")
 
-orange_frame = Frame(root, width=750, height=250, borderwidth=8, background="orange")
-orange_frame.grid(row=4, column=2, columnspan=2, rowspan=2)
-orange_frame.grid_propagate(False)
-orange_answer = Label(orange_frame, width=56, height=19, compound="center", font=big_font, fg="blue",
-                      background="orange", wraplength=700)
-orange_answer.grid(row=0, column=1, columnspan=1)
+blue_answer = Label(answersFrame, font=big_font, anchor="center")
+blue_answer.pack(fill="x", pady=5)
 
-green_frame = Frame(root, width=750, height=250, borderwidth=8, background="green")
-green_frame.grid(row=6, column=1, columnspan=2, rowspan=2)
-green_frame.grid_propagate(False)
-green_answer = Label(green_frame, width=56, height=19, compound="center", font=big_font, fg="white", background="green",
-                     wraplength=700)
-green_answer.grid(row=1, column=0, columnspan=1)
+orange_answer = Label(answersFrame, font=big_font, anchor="center")
+orange_answer.pack(fill="x", pady=5)
 
-yellow_frame = Frame(root, width=750, height=250, borderwidth=8, background="yellow")
-yellow_frame.grid_propagate(False)
-yellow_answer = Label(yellow_frame, width=56, height=19, compound="center", font=big_font, fg="purple",
-                      background="yellow", wraplength=700)
-yellow_answer.grid(row=1, column=1, columnspan=1)
+green_answer = Label(answersFrame, font=big_font, anchor="center")
+green_answer.pack(fill="x", pady=5)
 
-resetButton = Button(root, text="Reset", justify="center", width=20, height=2, command=reset, font=medium_font)
+yellow_answer = Label(answersFrame, font=big_font, anchor="center")
+yellow_answer.pack(fill="x", pady=5)
+
+resetButton = Button(main_frame, text="Reset", justify="center", width=20, height=2, command=reset, font=medium_font)
 resetButton.grid(row=8, column=0)
 
-startButton = Button(root, text="Start", justify="center", width=20, height=2, command=start, font=medium_font)
+startButton = Button(main_frame, text="Start", justify="center", width=20, height=2, command=start, font=medium_font)
 startButton.grid(row=8, column=3)
 
 rounds = 5
@@ -406,18 +396,6 @@ rounds = 5
 # Initialise the buzzer and turn the lights off
 buzz = BuzzController()
 reset()
-
-# Gets the requested values of the height and width.
-windowWidth = root.winfo_reqwidth()
-windowHeight = root.winfo_reqheight()
-print("Width", windowWidth, "Height", windowHeight)
-
-# Gets both half the screen width/height and window width/height
-positionRight = int(root.winfo_screenwidth() / 2 - windowWidth / 2)
-positionDown = int(root.winfo_screenheight() / 3 - windowHeight / 2)
-
-# Positions the window in the center of the page.
-root.geometry("+{}+{}".format(positionRight, positionDown))
 
 print("Starting loop...")
 root.mainloop()
