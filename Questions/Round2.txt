@@ -43,7 +43,7 @@ Hornbeam
 Ash
 Willow
 
-10. Which wood was used (eg to make the cogs in mills) because it is the hardest British wood
+10. Which wood was used (e.g. to make the cogs in mills) because it is the hardest British wood
 Oak
 Hornbeam
 SycamoreElephant

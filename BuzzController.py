@@ -81,6 +81,7 @@ class BuzzController:
             if value:
                 if allowed_buttons is None or key in allowed_buttons:
                     return key
+        return None
 
     def controller_get_first_pressed(self, buzz_button, controllers=None):
         if controllers is None:

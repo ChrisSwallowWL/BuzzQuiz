@@ -4,7 +4,7 @@ import time
 import _thread
 import json
 from os import path
-from tkinter import Tk, StringVar, Label, Button, Frame, DISABLED, NORMAL, Canvas
+from tkinter import Tk, Label, Button, Frame, DISABLED, NORMAL, Canvas
 from PIL import ImageTk, Image
 
 from BuzzController import BuzzController
